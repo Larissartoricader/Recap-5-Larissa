@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtPiecePreview({ piece }) {
   const reducedHeight = piece.dimensions.height * 0.25;
@@ -14,6 +15,9 @@ export default function ArtPiecePreview({ piece }) {
         width={reducedWidth}
       />
       <p>{piece.artist}</p>
+      <Link href={`/art-pieces/${piece.slug}`}>
+        Check out this piece of art in detail
+      </Link>
     </>
   );
 }

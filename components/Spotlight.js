@@ -5,15 +5,17 @@ const StyledSpotlightBox = styled.article`
   background-color: gray;
 `;
 
-export default function Spotlight({ pieces }) {
-  // const randomNr = Math.random() * 10;
-  // const randomIndexNr = Math.round(randomNr);
-  // console.log("Index-Nr of a Piece " + randomIndexNr);
-  // const randomPiece = pieces[randomIndexNr];
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
-  const randomPiece = pieces[Math.round(Math.random() * 10)];
-  const reducedHeight = randomPiece.dimensions.height * 0.25;
-  const reducedWidth = randomPiece.dimensions.width * 0.25;
+export default function Spotlight({ pieces }) {
+  const randomNr = getRandomNumber(0, 10);
+  const randomIndexNr = Math.round(randomNr);
+  console.log("Index-Nr of a Piece " + randomIndexNr);
+  const randomPiece = pieces[randomIndexNr];
+  const reducedHeight = randomPiece.dimensions.height * 0.2;
+  const reducedWidth = randomPiece.dimensions.width * 0.2;
 
   return (
     <>
