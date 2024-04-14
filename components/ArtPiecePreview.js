@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
 
 export default function ArtPiecePreview({ piece }) {
   const reducedHeight = piece.dimensions.height * 0.25;
@@ -8,6 +9,7 @@ export default function ArtPiecePreview({ piece }) {
   return (
     <>
       <h3>{piece.name}</h3>
+      <FavoriteButton />
       <Image
         src={piece.imageSource}
         alt={`Art ${piece.name} by Artist ${piece.artist}`}

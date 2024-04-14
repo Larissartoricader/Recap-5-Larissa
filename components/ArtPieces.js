@@ -1,4 +1,3 @@
-import { uid } from "uid";
 import ArtPiecePreview from "./ArtPiecePreview";
 import styled from "styled-components";
 
@@ -11,7 +10,7 @@ export default function ArtPieces({ pieces }) {
       <h2>ArtPieces</h2>
       <StyledList>
         {pieces.map((piece) => (
-          <li key={uid()}>
+          <li key={id}>
             <ArtPiecePreview piece={piece} />
           </li>
         ))}

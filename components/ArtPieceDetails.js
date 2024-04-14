@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import FavoriteButton from "./FavoriteButton";
 
 export default function ArtPieceDetails({ currentArtPiece }) {
   const router = useRouter;
@@ -16,6 +17,7 @@ export default function ArtPieceDetails({ currentArtPiece }) {
         <title>{name}</title>
       </Head>
       <h2>{name}</h2>
+      <FavoriteButton />
       <p>Artist: {artist}</p>
       <p>Year: {year}</p>
       <p>Genre: {genre}</p>

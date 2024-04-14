@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import FavoriteButton from "./FavoriteButton";
 
 const StyledSpotlightBox = styled.article`
   background-color: gray;
@@ -9,7 +10,7 @@ function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-export default function Spotlight({ pieces }) {
+export default function Spotlight({ pieces, handleFavoritePiece }) {
   const randomNr = getRandomNumber(0, 10);
   const randomIndexNr = Math.round(randomNr);
   console.log("Index-Nr of a Piece " + randomIndexNr);
@@ -21,6 +22,7 @@ export default function Spotlight({ pieces }) {
     <>
       <StyledSpotlightBox>
         <h2>The Art Spotlight</h2>
+        <FavoriteButton />
         <h3>Artist: {randomPiece.artist}</h3>
         <Image
           src={randomPiece.imageSource}
